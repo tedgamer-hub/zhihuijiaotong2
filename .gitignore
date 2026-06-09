@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Frontend build outputs
+dist/
+dist.zip
+
+# Java build outputs
+target/
+out/
+build/
+
+# IDE and editor files
+.idea/
+.vscode/
+.qoder/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Duplicate / stale project copies
+SpringbootIntelliDetect/zhihuijiaotong_vue3/
+
+# Embedded frontend build artifacts in backend resources
+SpringbootIntelliDetect/IntelliDetect/IntelliDetect/src/main/resources/static/

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧交通数据监控大屏</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+</head>
+<body>
+<div class="dashboard-container">
+    <!-- 顶部标题栏 -->
+    <header class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <h1>智慧交通实时监控系统</h1>
+        <div class="time-info">
+            <div class="date" id="currentDate">2025年3月16日</div>
+            <div class="time" id="currentTime">06:38:45</div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <div class="main-content">
+        <!-- 左侧面板 -->
+        <div class="left-panel">
+            <div class="panel-item traffic-flow">
+                <div class="panel-header">
+                    <h3>交通流量分析</h3>
+                </div>
+                <div class="chart-container" id="trafficFlowChart"></div>
+            </div>
+
+            <div class="panel-item congestion-rank">
+                <div class="panel-header">
+                    <h3>拥堵路段排名</h3>
+                </div>
+                <div class="rank-list">
+                    <div class="rank-item">
+                        <span class="rank">1</span>
+                        <span class="road-name">中山北路</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                        <span class="value">9.0</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank">2</span>
+                        <span class="road-name">南京东路</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                        <span class="value">8.5</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank">3</span>
+                        <span class="road-name">延安高架</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 78%;"></div>
+                        </div>
+                        <span class="value">7.8</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank">4</span>
+                        <span class="road-name">人民广场</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 72%;"></div>
+                        </div>
+                        <span class="value">7.2</span>
+                    </div>
+                    <div class="rank-item">
+                        <span class="rank">5</span>
+                        <span class="road-name">浦东大道</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%;"></div>
+                        </div>
+                        <span class="value">6.5</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-item vehicle-stats">
+                <div class="panel-header">
+                    <h3>车辆类型统计</h3>
+                </div>
+                <div class="chart-container" id="vehicleTypeChart"></div>
+            </div>
+        </div>
+
+        <!-- 中间面板 -->
+        <div class="center-panel">
+            <div class="panel-item traffic-map">
+                <div class="panel-header">
+                    <h3>交通实时地图</h3>
+                </div>
+                <div class="map-container" id="trafficMap">
+                    <!-- 地图内容将通过JS加载 -->
+                </div>
+            </div>
+
+            <div class="data-overview">
+                <div class="data-card">
+                    <div class="card-value" id="accidentCount">24</div>
+                    <div class="card-title">今日事故</div>
+                </div>
+                <div class="data-card">
+                    <div class="card-value" id="congestionCount">18</div>
+                    <div class="card-title">拥堵路段</div>
+                </div>
+                <div class="data-card">
+                    <div class="card-value" id="avgSpeed">32<span class="unit">km/h</span></div>
+                    <div class="card-title">平均车速</div>
+                </div>
+                <div class="data-card">
+                    <div class="card-value" id="trafficIndex">6.8</div>
+                    <div class="card-title">交通指数</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧面板 -->
+        <div class="right-panel">
+            <div class="panel-item traffic-incidents">
+                <div class="panel-header">
+                    <h3>实时交通事件</h3>
+                </div>
+                <div class="incident-list">
+                    <div class="incident-item urgent">
+                        <div class="incident-time">06:35</div>
+                        <div class="incident-info">
+                            <div class="incident-type">交通事故</div>
+                            <div class="incident-location">中山北路与长宁路交叉口</div>
+                            <div class="incident-desc">两车相撞，造成中度拥堵</div>
+                        </div>
+                    </div>
+                    <div class="incident-item">
+                        <div class="incident-time">06:28</div>
+                        <div class="incident-info">
+                            <div class="incident-type">道路施工</div>
+                            <div class="incident-location">南京东路近外滩段</div>
+                            <div class="incident-desc">道路维修，车辆缓行</div>
+                        </div>
+                    </div>
+                    <div class="incident-item urgent">
+                        <div class="incident-time">06:15</div>
+                        <div class="incident-info">
+                            <div class="incident-type">交通管制</div>
+                            <div class="incident-location">人民广场周边</div>
+                            <div class="incident-desc">大型活动，实施临时交通管制</div>
+                        </div>
+                    </div>
+                    <div class="incident-item">
+                        <div class="incident-time">06:02</div>
+                        <div class="incident-info">
+                            <div class="incident-type">车辆故障</div>
+                            <div class="incident-location">延安高架西段</div>
+                            <div class="incident-desc">一辆货车抛锚，占用应急车道</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-item traffic-trend">
+                <div class="panel-header">
+                    <h3>24小时交通趋势</h3>
+                </div>
+                <div class="chart-container" id="trafficTrendChart"></div>
+            </div>
+
+            <div class="panel-item traffic-light">
+                <div class="panel-header">
+                    <h3>信号灯运行状态</h3>
+                </div>
+                <div class="chart-container" id="trafficLightChart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部信息栏 -->
+    <footer class="footer">
+        <div class="copyright">© 2025 智慧交通监控中心 版权所有</div>
+        <div class="update-time">数据更新时间: 2025-03-16 06:38:45</div>
+    </footer>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

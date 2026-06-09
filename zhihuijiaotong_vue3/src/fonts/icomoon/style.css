@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?pklmmr');
+  src:  url('fonts/icomoon.eot?pklmmr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?pklmmr') format('truetype'),
+    url('fonts/icomoon.woff?pklmmr') format('woff'),
+    url('fonts/icomoon.svg?pklmmr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yongdu3:before {
+  content: "\e90e";
+}
+.icon-fengbi:before {
+  content: "\e90c";
+  color: #7fa0ff;
+}
+.icon-shigong:before {
+  content: "\e90d";
+}
+.icon-shexiangtou:before {
+  content: "\e90a";
+}
+.icon-shigu:before {
+  content: "\e902";
+  color: #4f8afe;
+}
+.icon-chesu:before {
+  content: "\e906";
+}
+.icon-yongdu2:before {
+  content: "\e907";
+}
+.icon-1:before {
+  content: "\e908";
+  color: #26a5ff;
+}
+.icon-zhishu:before {
+  content: "\e909";
+}
+.icon-yongdu:before {
+  content: "\e903";
+  color: #26a5ff;
+}
+.icon-xinhaodeng:before {
+  content: "\e904";
+}
+.icon-leixing:before {
+  content: "\e905";
+}
+.icon-qushi:before {
+  content: "\e900";
+}
+.icon-shijian:before {
+  content: "\e90b";
+}
+.icon-liuliang:before {
+  content: "\e901";
+}
